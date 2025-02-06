@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Clothes</title>
+  <link rel="stylesheet" href="css/sell.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Sell Clothes</h1>
+    <form id="sellForm">
+      <div>
+        <label for="clothingName">Clothing Name:</label>
+        <input type="text" id="clothingName" required>
+      </div>
+
+      <div>
+        <label for="clothingDescription">Description:</label>
+        <textarea id="clothingDescription" required></textarea>
+      </div>
+
+      <div>
+        <label for="clothingPrice">Price:</label>
+        <input type="number" id="clothingPrice" required>
+      </div>
+
+      <div>
+        <label for="clothingImage">Image URL:</label>
+        <input type="text" id="clothingImage" required>
+      </div>
+
+      <button type="submit">Add Clothing</button>
+    </form>
+
+    <button id="backBtn" onclick="window.history.back();">Back&#8594;</button>
+  </div>
+
+  <script src="sell.js"></script>
+</body>
+</html>

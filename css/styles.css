@@ -1,0 +1,320 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f9;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 150px;
+  height: 100%;
+  background-color: #343a40;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+.fas {
+  font-size: 24px; /* Adjust the size of the icon */
+  color: #333; /* Change the color */
+}
+
+.fa-id-badge {
+  color: #007bff; /* Specific color for this icon */
+}
+#profileLink:hover .fa-id-badge {
+  color: #ff5722; /* Change the color on hover */
+  transform: scale(1.1); /* Slightly enlarge the icon */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none; /* Remove underline */
+  background-color: transparent; /* No background by default */
+}
+
+.sidebar a:hover {
+  background-color: #495057; /* Add hover effect */
+  text-decoration: none; /* No underline on hover */
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  margin-left: 250px;  /* Ensures that content is aligned when sidebar is open */
+  transition: margin-left 0.3s ease;
+  padding: 80px 20px 20px 20px;  /* Added top padding to prevent content from being hidden behind navbar */
+  background-color: #f4f4f9;
+  text-decoration: none;
+}
+
+.main-content.collapsed {
+  margin-left: 0;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+
+.navbar .menu-toggle {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.navbar .title a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 15px;
+  border: 2px solid white;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+
+.navbar .title a:hover {
+  color: #007bff;
+  background-color: white;
+  border-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Content */
+/* Modify this container to be a flex container */
+.clothes-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  width: 100%; /* Takes up the full width */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #007bff transparent; /* Scrollbar colors */
+}
+
+.clothes-container::-webkit-scrollbar {
+  height: 8px; /* Horizontal scrollbar height */
+}
+
+.clothes-container::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Scrollbar thumb color */
+  border-radius: 10px; /* Rounded scrollbar */
+}
+
+.clothes-container::-webkit-scrollbar-track {
+  background-color: transparent; /* Scrollbar track color */
+}
+
+/* Each individual item (clothing) */
+.clothes-item {
+  display: inline-block;
+  width: 200px; /* Adjust width */
+  height: 300px; /* Adjust height */
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+
+/* Example styling for images inside the clothes item */
+.clothes-item img {
+  display: inline-block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Title for each clothing item */
+.clothes-item h3 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Optional styling for price, etc. */
+.clothes-item .price {
+  font-size: 16px;
+  color: #007bff;
+}
+
+
+/* General Styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, sans-serif;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #f4f4f9;
+}
+
+.container {
+width: 400px;
+height: 450px;
+position: relative;
+overflow: hidden;
+background-color: white;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Container */
+.form-container {
+display: flex;
+width: 200%; /* Double width for sliding effect */
+height: 100%;
+transition: transform 0.5s ease-in-out;
+transform: translateX(0); /* Default to showing Sign Up */
+}
+
+/* Forms */
+.form {
+width: 50%; /* Each form takes up half the container */
+padding: 40px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #007bff;
+color: white;
+}
+
+.signup-form {
+background-color: #007bff;
+}
+
+.login-form {
+background-color: #6c757d;
+}
+
+/* Inputs & Buttons */
+input {
+width: 80%;
+padding: 10px;
+margin: 10px 0;
+border: none;
+border-radius: 5px;
+}
+
+button {
+width: 80%;
+padding: 10px;
+border: none;
+border-radius: 5px;
+background-color: white;
+color: #007bff;
+cursor: pointer;
+font-weight: bold;
+transition: background-color 0.3s;
+}
+
+button:hover {
+background-color: #e0e0e0;
+}
+
+/* Toggle Text */
+p {
+margin-top: 20px;
+font-size: 14px;
+}
+
+p span {
+color: #ffc107;
+cursor: pointer;
+font-weight: bold;
+}
+
+#logoutBtn {
+background-color: white;
+color: #007bff;
+padding: 10px 20px;
+border: 2px solid #007bff;
+border-radius: 5px;
+cursor: pointer;
+display: none; /* Hidden by default */
+}
+
+#logoutBtn:hover {
+background-color: #e0e0e0;
+}
+.popup-container {
+  position: fixed;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-container.show {
+  bottom: 30%; /* Moves to the center of the screen */
+  opacity: 1;
+  visibility: visible;
+}
+
+#popupCloseBtn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#popupCloseBtn:hover {
+  background-color: #d32f2f;
+}

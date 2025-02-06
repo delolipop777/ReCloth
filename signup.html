@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup & Login</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>  
+  <!-- Pop-up Container -->
+<div id="popup" class="popup-container">
+  <div class="popup-content">
+    <p id="popupMessage"></p>
+    <button id="popupCloseBtn">Close</button>
+  </div>
+</div>
+
+  <div class="container">
+    <!-- Form Container -->
+    <div class="form-container" id="formContainer">
+      <!-- Login Form -->
+      <div class="form login-form">
+        <h2>Log In</h2>
+        <input type="text" id="loginUsername" placeholder="Username" />
+        <input type="password" id="loginPassword" placeholder="Password" />
+        <button id="loginBtn">Log In</button>
+        <p>Don't have an account? <span id="toSignup">Sign Up</span></p>
+      </div>
+      <!-- Signup Form -->
+      <div class="form signup-form">
+        <h2>Sign Up</h2>
+        <input type="text" id="signupUsername" placeholder="Username" />
+        <input type="email" id="signupEmail" placeholder="Email" />
+        <input type="password" id="signupPassword" placeholder="Password" />
+        <button id="signupBtn">Sign Up</button>
+        <p>Already have an account? <span id="toLogin">Log In</span></p>
+      </div>
+      
+    </div>
+  </div>
+  <script src="signup.js"></script>
+</body>
+</html>

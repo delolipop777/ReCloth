@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothing Resale App</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#" style="margin-top: 40px;">Home</a>
+    <a href="sell.html">Sell Clothes</a>
+    <a href="profile.html" id="profileLink">
+      <i class="fas fa-id-badge"></i>
+    </a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content collapsed" id="mainContent">
+    <!-- Top Navbar -->
+    <div class="navbar">
+      <span class="menu-toggle" id="menuToggle">&#9776;</span>
+      <span class="title">
+        <!-- Dynamically change link depending on login state -->
+        <a href="signup.html" id="loginSignupLink">Log In & Sign Up</a>
+        <a href="sell.html" id="plus" style="display: none;">+</a>
+        <a href="#" id="logoutLink" style="display: none;">Log Out</a>
+      </span>
+    </div>
+
+    <!-- Page Content -->
+    <div class="content" id="welcomeMessage">
+      <h1>Welcome to Clothing Resale!</h1>
+      <p>Sell your pre-loved clothes or find something new for your wardrobe.</p>
+      <p>Use the menu to navigate through the app!</p>
+    </div>
+  
+
+    <h1 style="margin-top: 30px;">Clothes for Sale</h1>
+    <!-- Clothes Display Section -->
+    <div style="margin: auto; text-align: center;" class="clothes-container">
+      <div class="clothes-grid" id="clothesContainer"></div>
+    </div>
+    <button style="margin-top: 10px;" id="sellButton" onclick="window.location.href='sell.html';">Sell Your Clothes</button>
+  </div>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>

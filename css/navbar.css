@@ -1,0 +1,47 @@
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;  /* Hidden by default */
+    background-color: #333;
+    padding-top: 20px;
+    transition: 0.3s ease;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Hamburger button */
+  .menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  /* Active Sidebar (when open) */
+  .sidebar.open {
+    left: 0;  /* Show the sidebar */
+  }
+  
+  /* Main Content (to shift when sidebar opens) */
+  .main-content {
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main-content.shifted {
+    margin-left: 250px;  /* Shift content when sidebar is open */
+  }
+  

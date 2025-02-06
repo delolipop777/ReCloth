@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+  <div id="popup" class="popup-container">
+    <div class="popup-content">
+      <p id="popupMessage"></p>
+      <button id="popupCloseBtn">Close</button>
+    </div>
+  </div>
+  <div class="container">
+    <h1 style="text-align: center;">Profile</h1>
+    
+    <div class="form-container" id="formContainer">
+      <!-- Password Change Form -->
+      <div class="form password-change-form">
+        <h2>Change Password</h2>
+        <input type="password" placeholder="Old Password" id="oldPassword" required>
+        <input type="password" placeholder="New Password" id="newPassword" required>
+        <input type="password" placeholder="Confirm Password" id="confirmPassword" required>
+        <button class="change-password-btn">Change Password</button>
+        <p><span class="delete-account-btn">Delete Account</span></p>
+      </div>
+
+      <!-- Delete Account Form -->
+      <div class="form delete-account-form">
+        <h2>Delete Account</h2>
+        <input type="text" placeholder="Type 'DELETE' to confirm" id="confirmation" required>
+        <button class="account-delete-btn">Delete Account</button>
+        <p><span class="password-change-btn" id="change-password-btn">Back to Change Password</span></p>
+      </div>
+    </div>
+  </div>
+  <button id="backBtn" onclick="goBack()">Back &#8594;</button>
+
+  <script src="profile.js"></script>
+</body>
+</html>
+ 
