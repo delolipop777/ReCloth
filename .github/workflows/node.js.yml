@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     strategy:
       matrix:
@@ -26,6 +26,32 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - name: Install dependencies
+    run: npm install
+
+    - name: Install PM2
+    run: npm install -g pm2
+
+    - name: Restart App with PM2
+    run: |
+          pm2 stop my-app || echo "App not running"
+          pm2 start server.js --name my-app
+          pm2 save
+     - name: Setup SSH Key
+      run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy Code to Windows Server
+        run: |
+          scp -r . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:C:\deploy\my-app
+
+      - name: Restart App with PM2
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "pm2 stop my-app || echo 'App not running'"
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd C:\deploy\my-app && npm install"
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "pm2 start index.js --name my-app"
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "pm2 save"
+
